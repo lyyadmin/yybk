@@ -1,0 +1,9 @@
+<!--pages/home/page/page.wxml-->
+<view class='page-container'>
+  <text class='title'>{{pageinfo.title}}</text>
+  <view class='pcontent' wx:for-index="idx"  wx:for="{{pageinfo.content}}" wx:for-item="item" wx:key="unique">
+    <image class='piimg' wx:if="{{item.img}}" src='{{item.img}}' mode='widthFix'></image>
+    <text class='ptext' wx:else>{{item}}</text>
+  </view>
+  <text class='from'>{{pageinfo.from}}</text>
+</view>

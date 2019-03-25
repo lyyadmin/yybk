@@ -1,0 +1,13 @@
+<!--pages/user/mine/mine.wxml-->
+<view class='mine-box'>
+  <view class='head-pane'>
+   <image class='headphoto' mode="scaleToFill" src="{{photoUrl}}" ></image>
+   <button class='nichen' open-type="getUserInfo" lang="zh_CN"  bindgetuserinfo="getUserInfo" plain='true' size='mini'>{{nichen}}</button>
+   <image wx:if='{{userInfo.gender==0}}' class='gender' mode="scaleToFill" src="{{genderUrl[1]}}" ></image>
+   <image wx:if='{{userInfo.gender==1}}' class='gender' mode="scaleToFill" src="{{genderUrl[0]}}" ></image>
+  </view>
+  <view class='line-pane' bindtap='toVisitDates'>
+    <text class='line-text'>访问天数</text>
+    <image class='arraw_right' src='/images/arraw_right.png'></image>
+  </view>
+</view>

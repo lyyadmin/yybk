@@ -1,0 +1,53 @@
+/* pages/home/index/index.wxss */
+.index-container{
+  width: 100%;
+  height: auto;
+}
+.index-container .item-box{
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #ddd;
+}
+.index-container .banner-img{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.index-container .swiper-item{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.index-container .type-box{
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+.index-container .type-item{
+  display: inline-block;
+  width: 50%;
+  height: auto;
+}
+.index-container .type-card{
+  width: auto;
+  height: 150px;
+  background: #FFF;
+  border:solid 1px #ddd;
+  padding: 10px;
+}
+.index-container  .type-item:nth-child(2n+1) .type-card{
+  margin: 15px 7px 0 15px;
+}
+.index-container  .type-item:nth-child(2n) .type-card{
+  margin: 15px 15px 0 7px;
+}
+.index-container .type-img{
+  width:100%;
+  height: 130px;
+}
+.index-container .type-name{
+  width:auto;
+  height: 20px;
+  margin-left: 5px;
+}

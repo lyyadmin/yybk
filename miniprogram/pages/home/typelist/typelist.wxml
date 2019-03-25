@@ -1,0 +1,10 @@
+<!--pages/home/typelist/typelist.wxml-->
+<view class='list-container'>
+  <view class='list-item' wx:for="{{list}}" wx:for-index="idx" wx:for-item="item" wx:key="unique" bindtap='iteminfo' data-itemid='{{item._id}}'>
+    <image class='item-icon' src='{{item.pic}}'></image>
+    <view class='text-box'>
+      <view class='item-name'>{{item.title}}<text>({{item.pinyin}})</text></view>
+      <rich-text class='item-subtitle'>{{item.subtitle}}</rich-text>
+    </view>
+  </view>
+</view>

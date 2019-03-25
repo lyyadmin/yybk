@@ -1,0 +1,7 @@
+<!--pages/splash/splash.wxml-->
+<view class='splash-container'>
+  <image class='head' src="{{headurl}}"></image>
+  <image class='kuang' src="{{kuang}}"></image>
+  <view class='name'>{{nickname}}</view>
+  <view class='foot' bindtap='mainView'>进入</view>
+</view>

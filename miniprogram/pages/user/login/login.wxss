@@ -1,0 +1,39 @@
+/* pages/user/login/login.wxss */
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.user{
+  width:auto;
+  margin: 40px 20px 20px 20px;
+  border:solid 1px #ddd;
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.pwd{
+  width:auto;
+  margin: 20px 20px 20px 20px;
+  border:solid 1px #ddd;
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.btn{
+  width:auto;
+  line-height:35px;
+  margin: 20px 20px 5px 20px;
+  padding: 3px 0px;
+  background: #2c8608;
+  font-size: 16px;
+  color:#FFF;
+}
+.forgetpwd{
+  float: right;
+  margin-right: 20px;
+  font-size: 14px;
+  text-decoration: underline;
+  color: #2c8608;
+}

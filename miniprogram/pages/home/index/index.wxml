@@ -1,0 +1,24 @@
+<!--pages/home/index/index.wxml-->
+<view class='index-container'>
+  <swiper
+    indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}"
+    interval="{{interval}}"
+    duration="{{duration}}"
+    indicator-color="{{indicator_color}}"
+    indicator-active-color="{{indicator_active_color}}">
+    <block class='item-box' wx:for="{{imgUrls}}" wx:key="unique">
+      <swiper-item class='swiper-item'>
+        <image class='banner-img' src="{{item.url}}" mode='scaleToFill' bindtap='pageToHealth' data-pageid='{{item.page_id}}'/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='type-box'>
+    <view class='type-item' wx:for="{{types}}" wx:key="unique" wx:for-item="item" >
+      <view class='type-card' bindtap='typelistPage' data-title='{{item.title}}' data-typename='{{item.type_name}}'>
+        <image src='{{item.pic}}' class='type-img'></image>
+        <text class='type-name'>{{item.title}}</text>
+      </view>
+    </view>
+  </view>
+</view>

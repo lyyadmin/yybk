@@ -1,0 +1,7 @@
+<!--pages/user/login/login.wxml-->
+<view>
+  <input class='user' type='text' placeholder='请输入账号'/>
+  <input class='pwd' type='password' placeholder='请输入密码'/>
+  <button class='btn'>登录</button>
+  <text class='forgetpwd'>忘记密码</text>
+</view>

@@ -1,19 +1,48 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib"
+    "pages/splash/splash",
+    "pages/home/index/index",
+    "pages/user/mine/mine",
+    "pages/home/typelist/typelist",
+    "pages/home/iteminfo/iteminfo",
+    "pages/home/page/page",
+    "pages/user/login/login",
+    "pages/user/visitday/visitday"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#30bf6d",
+    "navigationBarTitleText": "健康百科",
+    "navigationBarTextStyle": "#fff"
   },
-  "cloud": true
+  "cloud": true,
+  "tabBar": {
+    "list": [
+      {
+        "color": "#333333",
+        "selectedColor": "#30bf6d",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index_on.png",
+        "pagePath": "pages/home/index/index",
+        "text": "首页"
+      },
+      {
+        "color": "#333333",
+        "selectedColor": "#30bf6d",
+        "iconPath": "images/mine.png",
+        "selectedIconPath": "images/mine_on.png",
+        "pagePath": "pages/user/mine/mine",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "navigateToMiniProgramAppIdList": [
+    "wxe5f52902cf4de896"
+  ]
 }

@@ -1,0 +1,8 @@
+<!--pages/user/visitday/visitday.wxml-->
+<view class='visit-container'>
+  <view class='dates-item' wx:for="{{visitlist}}" wx:for-index="idx" wx:for-item="item" wx:key="unique" >
+    <image class='user-photo' src='{{item.avatarUrl}}'></image>
+    <text class='nick-name'>{{item.nickName}}</text>
+    <text class='visit-dates'>{{item.visit_days}}天</text>
+  </view>
+</view>

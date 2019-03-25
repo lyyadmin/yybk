@@ -1,0 +1,49 @@
+/* pages/splash/splash.wxss */
+.splash-container{
+  width: 100%;
+  height: 100%;
+  background: #30bf6d;
+}
+.splash-container .kuang{
+  display: inline-block;
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-size: 100px 100px;
+  left: 50%;
+  top: 30%;
+  margin-left: -60px;
+  margin-top: -60px;
+}
+.splash-container .head{
+  display: inline-block;
+  position: absolute;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  left: 50%;
+  top: 30%;
+  margin-left: -48px;
+  margin-top: -49px;
+}
+.splash-container .name{
+  width: 100%;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 28px;
+  margin-top: 70%;
+}
+.splash-container .foot{
+  display: inline-block;
+  position: absolute;
+  width: 80px;
+  height: 35px;
+  line-height: 35px;
+  bottom:20%;
+  left: 50%;
+  margin-left: -40px; 
+  text-align: center;
+  background: rgba(0, 0, 0, 0.1);
+  color: #FFFFFF;
+  border-radius: 2px;
+}

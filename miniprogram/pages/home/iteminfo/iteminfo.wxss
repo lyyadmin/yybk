@@ -1,0 +1,82 @@
+/* pages/home/iteminfo/iteminfo.wxss */
+.iteminfo-container{
+  width:100%;
+  height: auto;
+  color: #333;
+  background: #FFFFFF;
+  padding-bottom: 20px;
+}
+.iteminfo-container .icon{
+  width: 90%;
+  margin: 15px 5%;
+}
+.iteminfo-container .title{
+  margin: 0 10px 0 0;
+  display: inline;
+  font-size: 36px;
+  line-height: 1.15;
+  vertical-align: sub;
+  padding: 20px 8px 0 18px;
+  color: #30bf6d;
+  font-weight: bold;
+}
+.iteminfo-container .title text{
+  position: absolute;
+  font-size:14px;
+  margin-top:-14px;
+}
+.iteminfo-container .subtitle{
+  margin: 0 10px 0 -10px;
+  display: inline;
+  font-weight: 400;
+  font-size: 16px;
+  vertical-align: text-bottom;
+  color: #666666;
+}
+.iteminfo-container .sublabel{
+  display: block;
+  padding: 18px 8px 0 10px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 22px;
+  font-weight: 400;
+  color: #000;
+  background: #fff;
+  border-top: solid 10px #f6f6f6;
+  margin-top: 10px;
+}
+.iteminfo-container .sublabel text{
+  display: inline-block;
+  width:20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  background: #30bf6d;
+  font-size: 16px;
+  color: #FFFFFF;
+  margin: 0 10px;
+  vertical-align: middle;
+}
+.iteminfo-container .subcontent{
+  font-size: 18px;
+  word-wrap: break-word;
+  color: #333;
+  text-indent: 2em;
+  line-height: 30px;
+  padding: 5px 10px;
+}
+.iteminfo-container .subcontent1{
+  padding: 5px 10px;
+}
+.iteminfo-container .piimg{
+  width: 100%;
+  margin: 10px 0;
+}
+.iteminfo-container .ptext{
+  font-size: 18px;
+  word-wrap: break-word;
+  color: #333;
+  text-indent: 2em;
+  line-height: 30px;
+}

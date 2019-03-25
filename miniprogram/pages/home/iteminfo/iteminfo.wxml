@@ -1,0 +1,16 @@
+<!--pages/home/iteminfo/iteminfo.wxml-->
+<view class='iteminfo-container'>
+  <image class='icon' src='{{info.pic}}' mode='widthFix'></image>
+  <text class='title' wx:if="{{info.title}}"><text>[{{info.pinyin}}]</text>{{info.title}}</text>
+  <text class='subtitle' wx:if="{{info.subtitle}}">({{info.subtitle}})</text>
+  <view class='subcontent' wx:for-index="idx"  wx:for="{{info.des}}" wx:for-item="item" wx:key="unique">{{item}}</view>
+  <view wx:if="{{info.content}}">
+    <view wx:for-index="idx"  wx:for="{{info.content}}" wx:for-item="item" wx:key="unique">
+      <text class='sublabel'><text>{{idx+1}}</text>{{item.title}}</text>
+      <view class='subcontent1' wx:for-index="idx"  wx:for="{{item.des}}" wx:for-item="item1" wx:key="unique" wx:if="{{item1}}">
+        <image class='piimg' wx:if="{{item1.img}}" src='{{item1.img}}' mode='widthFix'></image>
+        <text class='ptext' wx:else>{{item1}}</text>
+      </view>
+    </view>
+  </view>
+</view>
