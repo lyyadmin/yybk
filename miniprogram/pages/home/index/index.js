@@ -19,8 +19,41 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.onQuery();
-    this.onTypelist();
+    let self = this;
+    wx.getStorage({
+      key: 'bannerlist',
+      success: function(res) {
+        if (res.data && res.data.length != 0) {
+          self.setData({
+            imgUrls: res.data
+          });
+        } else {
+          console.log(res);
+          self.onQuery();
+        }
+      },
+      fail: function (err) {
+        console.log(err);
+        self.onQuery();
+      }
+    })
+    wx.getStorage({
+      key: 'typelist',
+      success: function (res) {
+        if (res.data && res.data.length != 0) {
+          self.setData({
+            types: res.data
+          });
+        } else {
+          console.log(res);
+          self.onTypelist();
+        }
+      },
+      fail: function (err) {
+        console.log(err);
+        self.onTypelist();
+      }
+    })
   },
 
   /**
@@ -59,7 +92,9 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.onQuery();
+    this.onTypelist();
+    wx.showNavigationBarLoading(); //在标题栏中显示加载
   },
 
   /**
@@ -85,14 +120,22 @@ Page({
     // 查询当前用户所有的 counters
     db.collection('bannerlist').get({
       success: res => {
+        wx.stopPullDownRefresh();
+        wx.hideNavigationBarLoading();
         console.log(res.data);
         if (res.data && res.data.length != 0) {
+          wx.setStorage({
+            key: 'bannerlist',
+            data: res.data,
+          })
           self.setData({
             imgUrls: res.data
           });
         }
       },
       fail: err => {
+        wx.stopPullDownRefresh();
+        wx.hideNavigationBarLoading();
         console.error('查询记录失败：', err)
       }
     })
@@ -108,14 +151,22 @@ Page({
       menu:0
     }).get({
       success: res => {
+        wx.stopPullDownRefresh();
+        wx.hideNavigationBarLoading();
         console.log(res.data);
         if (res.data && res.data.length != 0) {
+          wx.setStorage({
+            key: 'typelist',
+            data: res.data,
+          })
           self.setData({
             types: res.data
           });
         }
       },
       fail: err => {
+        wx.stopPullDownRefresh();
+        wx.hideNavigationBarLoading();
         console.error('查询记录失败：', err)
       }
     })

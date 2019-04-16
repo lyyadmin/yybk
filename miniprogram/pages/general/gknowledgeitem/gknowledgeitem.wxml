@@ -1,0 +1,12 @@
+<!--pages/general/gknowledgeitem/gknowledgeitem.wxml-->
+<view class='gknowledgeitem-container'>
+  <text class='title'>{{iteminfo.title}}</text>
+  <view class='msg'>{{iteminfo.msg}}</view>
+  <view wx:for-index="idx"  wx:for="{{iteminfo.content}}" wx:for-item="content" wx:key="unique">
+    <view class='subtitle' wx:if="{{content.title!=''}}">{{content.title}}</view>
+    <view class='pcontent' wx:for-index="idx"  wx:for="{{content.des}}" wx:for-item="item" wx:key="unique">
+      <image class='piimg' wx:if="{{item.img}}" src='{{item.img}}' mode='widthFix'></image>
+      <text class='ptext' wx:else>{{item}}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,30 @@
+/* pages/general/gknowledge/gknowledge.wxss */
+.gknowledge-container{
+  width:100%;
+  height: auto;
+  color: #333;
+  background: #FFFFFF;
+}
+.gknowledge-container .gknowledge-item{
+  width: auto;
+  height: auto;
+  margin: 0 10px;
+  padding: 10px 0;
+  border-bottom: solid 1px #efefef;
+}
+.gknowledge-container .item-title{
+  width: auto;
+  margin: 0;
+  color: #30bf6d;
+  font-size: 16px;
+}
+.gknowledge-container .item-msg{
+  width: auto;
+  height: 40px;
+  display: block;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  margin: 5px 0;
+  color: #666666;
+  font-size: 14px;
+}

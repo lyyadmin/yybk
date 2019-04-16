@@ -1,0 +1,46 @@
+/* gknowledgeitems/general/gknowledgeitem/gknowledgeitem.wxss */
+.gknowledgeitem-container{
+  width: 100%;
+  height: auto;
+  background: #FFFFFF;
+  padding-bottom: 20px;
+}
+.gknowledgeitem-container .title{
+  display: inline-block;
+  padding: 15px;
+  font-size: 20px;
+  color: #30bf6d;
+}
+.gknowledgeitem-container .msg{
+  padding: 0 10px;
+  font-size: 16px;
+  color: #333;
+  line-height: 26px;
+}
+.gknowledgeitem-container .subtitle{
+  padding: 10px;
+  font-size: 18px;
+  color: #30bf6d;
+  border-top: solid 5px #f6f6f6;
+}
+.gknowledgeitem-container .pcontent{
+  margin: 0 10px;
+}
+.gknowledgeitem-container .piimg{
+  width: 100%;
+  margin: 10px 0;
+}
+.gknowledgeitem-container .ptext{
+  display: block;
+  font-size: 16px;
+  word-wrap: break-word;
+  color: #333;
+  line-height: 26px;
+  padding: 5px 0;
+}
+.gknowledgeitem-container .from{
+  display: inline-block;
+  color: #666;
+  font-size: 14px;
+  margin: 20px 0 10px 10px;
+}

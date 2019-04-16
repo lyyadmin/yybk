@@ -1,6 +1,6 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "列表",
+  "navigationBarTitleText": "常识",
   "enablePullDownRefresh": true,
   "backgroundColor": "#30bf6d"
 }

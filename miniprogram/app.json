@@ -1,7 +1,9 @@
 {
   "pages": [
+    "pages/general/gknowledge/gknowledge",
     "pages/splash/splash",
     "pages/home/index/index",
+    "pages/general/gknowledgeitem/gknowledgeitem",
     "pages/user/mine/mine",
     "pages/home/typelist/typelist",
     "pages/home/iteminfo/iteminfo",
@@ -26,6 +28,14 @@
         "selectedIconPath": "images/index_on.png",
         "pagePath": "pages/home/index/index",
         "text": "首页"
+      },
+      {
+        "color": "#333333",
+        "selectedColor": "#30bf6d",
+        "iconPath": "images/gknowledge.png",
+        "selectedIconPath": "images/gknowledge_on.png",
+        "pagePath": "pages/general/gknowledge/gknowledge",
+        "text": "常识"
       },
       {
         "color": "#333333",

@@ -1,0 +1,7 @@
+<!--pages/general/gknowledge/gknowledge.wxml-->
+<view class='gknowledge-container'>
+  <view wx:for-index="idx"  wx:for="{{gknowledge}}" wx:for-item="item" wx:key="unique" class='gknowledge-item' bindtap='gknowledgeItem' data-iteminfo='{{item}}'>
+    <view class='item-title'>{{item.title}}</view>
+    <text class='item-msg'>{{item.msg}}</text>
+  </view>
+</view>

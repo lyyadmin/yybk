@@ -5,13 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list:[]
+    list:[],
+    typename:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let self = this;
     var title = options.title;
     if(title){
       wx.setNavigationBarTitle({
@@ -19,7 +21,24 @@ Page({
       })
     }
     if (options.typename) {
-      this.onTypelist(options.typename);
+      this.setData({ typename: options.typename});
+      wx.getStorage({
+        key: 'typelist' + options.typename,
+        success: function(res) {
+          if (res.data && res.data.length != 0) {
+            self.setData({
+              list: res.data
+            });
+          }else{
+            console.log(res);
+            self.onTypelist(options.typename);
+          }
+        },
+        fail: function (err) {
+          console.log(err);
+          self.onTypelist(options.typename);
+        }
+      })
     }
   },
 
@@ -99,6 +118,10 @@ Page({
       success: res => {
         console.log(res.data);
         if (res.data && res.data.length != 0) {
+          wx.setStorage({
+            key: 'typelist' + type_name,
+            data: res.data,
+          })
           self.setData({
             list: res.data
           });
