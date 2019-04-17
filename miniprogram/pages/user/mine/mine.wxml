@@ -10,4 +10,8 @@
     <text class='line-text'>访问天数</text>
     <image class='arraw_right' src='/images/arraw_right.png'></image>
   </view>
+  <view class='line-pane' bindtap='toEyeTest'>
+    <text class='line-text'>眼力测试</text>
+    <image class='arraw_right' src='/images/arraw_right.png'></image>
+  </view>
 </view>

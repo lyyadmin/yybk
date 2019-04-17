@@ -230,5 +230,11 @@ Page({
     wx.navigateTo({
       url: '../visitday/visitday',
     })
+  },
+
+  toEyeTest:function(){
+    wx.navigateTo({
+      url: '../eyetest/eyetest',
+    })
   }
 })

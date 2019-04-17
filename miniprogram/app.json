@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/user/eyetest/eyetest",
     "pages/general/gknowledge/gknowledge",
     "pages/splash/splash",
     "pages/home/index/index",

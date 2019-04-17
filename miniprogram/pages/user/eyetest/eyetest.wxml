@@ -1,0 +1,15 @@
+<!--pages/user/eyetest/eyetest.wxml-->
+<view class="page-body">
+  <view class='top-view'>
+    <text class='label-view'>(-_-)</text>
+    <text wx:if="{{number>0}}" class='number-view'>{{number}}</text>
+    <text wx:if="{{runtime>0}}"  class='time-view'>{{runtime}}秒</text>
+  </view>
+  <view class="page-body-wrapper">
+    <canvas canvas-id="canvas" class="canvas" bindtap='selectCircle'></canvas>
+  </view>
+  <view class='btn-box'>
+    <button bindtap='start'>开始</button>
+    <!-- <button bindtap='pause'>暂停</button> -->
+  </view>
+</view>
