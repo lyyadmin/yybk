@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    pageinfo:{}
+    pageinfo:{},
+    id:""
   },
 
   /**
@@ -13,8 +14,24 @@ Page({
    */
   onLoad: function (options) {
     if (options.pageid){
+      let self = this;
       var idstr = options.pageid;
-      this.onPageInfo(idstr);
+      this.setData({id:idstr});
+      wx.getStorage({
+        key: 'pages'+idstr,
+        success: function (res) {
+          if (res.data) {
+            self.refresh(res.data)
+          }else{
+            console.log(res);
+            self.onPageInfo(idstr);
+          }
+        },
+        fail:function(err){
+          console.log(err);
+          self.onPageInfo(idstr);
+        }
+      })
     }
   },
 
@@ -50,7 +67,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.onPageInfo(this.data.id);
   },
 
   /**
@@ -80,16 +97,25 @@ Page({
    * 查询page
    */
   onPageInfo: function (idstr) {
+    wx.showNavigationBarLoading();
     var self = this;
     const db = wx.cloud.database()
     db.collection('pages').doc(idstr).get({
       success: res => {
+        wx.stopPullDownRefresh();
+        wx.hideNavigationBarLoading();
         console.log(res.data);
         if (res.data) {
+          wx.setStorage({
+            key: 'pages'+idstr,
+            data: res.data,
+          })
           self.refresh(res.data)
         }
       },
       fail: err => {
+        wx.stopPullDownRefresh();
+        wx.hideNavigationBarLoading();
         console.error('查询记录失败：', err)
       }
     })

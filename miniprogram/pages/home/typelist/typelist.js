@@ -74,7 +74,8 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.onTypelist(this.data.typename);
+    wx.showNavigationBarLoading(); //在标题栏中显示加载
   },
 
   /**
@@ -116,6 +117,8 @@ Page({
       type_name: type_name
     }).get({
       success: res => {
+        wx.stopPullDownRefresh();
+        wx.hideNavigationBarLoading();
         console.log(res.data);
         if (res.data && res.data.length != 0) {
           wx.setStorage({
@@ -128,6 +131,8 @@ Page({
         }
       },
       fail: err => {
+        wx.stopPullDownRefresh();
+        wx.hideNavigationBarLoading();
         console.error('查询记录失败：', err)
       }
     })

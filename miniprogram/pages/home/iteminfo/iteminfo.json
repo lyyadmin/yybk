@@ -1,4 +1,6 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "种类"
+  "navigationBarTitleText": "种类",
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#30bf6d"
 }

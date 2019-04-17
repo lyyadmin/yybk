@@ -6,14 +6,31 @@ Page({
    */
   data: {
     info:{},
+    id:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let self = this;
     var id = options.itemid;
-    this.onTypelist(id);
+    this.setData({id:id});
+    wx.getStorage({
+      key: 'typelist' + id,
+      success: function(res) {
+        if (res.data) {
+          self.refresh(res.data)
+        }else{
+          console.log(res);
+          self.onTypelist(id);
+        }
+      },
+      fail: function (err) {
+        console.log(err);
+        self.onTypelist(id);
+      }
+    })
   },
 
   /**
@@ -48,7 +65,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.onTypelist(this.data.id);
   },
 
   /**
@@ -78,16 +95,25 @@ Page({
    * 查询iteminfo
    */
   onTypelist: function (idstr) {
+    wx.showNavigationBarLoading();
     var self = this;
     const db = wx.cloud.database()
     db.collection('typelist').doc(idstr).get({
       success: res => {
+        wx.stopPullDownRefresh();
+        wx.hideNavigationBarLoading();
         console.log(res.data);
         if (res.data) {
+          wx.setStorage({
+            key: 'typelist'+idstr,
+            data: res.data,
+          })
           self.refresh(res.data)
         }
       },
       fail: err => {
+        wx.stopPullDownRefresh();
+        wx.hideNavigationBarLoading();
         console.error('查询记录失败：', err)
       }
     })

@@ -36,7 +36,7 @@ Page({
         console.log(err);
         this.loadData();
       }
-    })
+    });
   },
 
   /**
@@ -108,10 +108,10 @@ Page({
     })
   },
   gknowledgeItem:function(e){
-    var id = e.currentTarget.dataset.iteminfo;
+    var iteminfo = e.currentTarget.dataset.iteminfo;
     // console.log(id);
     wx.navigateTo({
-      url: '../gknowledgeitem/gknowledgeitem?iteminfo=' + JSON.stringify(id),
+      url: '../gknowledgeitem/gknowledgeitem?id=' + iteminfo._id,
     })
   }
 })
