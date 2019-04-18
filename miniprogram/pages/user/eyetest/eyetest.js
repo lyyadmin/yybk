@@ -61,7 +61,7 @@ Page({
 
     function ball(x, y, color) {
       context.beginPath(0)
-      context.arc(x, y, radius/2-2, 0, Math.PI * 2)
+      context.arc(x, y, radius/2-1, 0, Math.PI * 2)
       context.setFillStyle(color)
       context.setStrokeStyle('rgba(1,1,1,0)')
       context.fill()
@@ -73,21 +73,59 @@ Page({
     }
     function randomColor(){
       let dis = 50;
-      let r = parseInt(Math.random() * 255).toString(16);
-      if(r.length==1)r = "0"+r;
-      let gnum = Math.random() * 255;
-      let g = parseInt(gnum).toString(16);
-      if (g.length == 1) g = "0" + g;
-      let g1 = 0;
-      if (gnum > dis){
-        g1 = parseInt(gnum - dis).toString(16);
-      }else{
-        g1 = parseInt(gnum + dis).toString(16);
+      let num = 0;
+      let ry = parseInt(Math.random() * 255);
+      let gy = parseInt(Math.random() * 255);
+      let by = parseInt(Math.random() * 255);
+      if(ry>=gy && ry>=by){//ry
+        let r = parseInt(ry).toString(16);
+        if(r.length == 1)r = "0" + r;
+        let r1;
+        if(ry>dis){
+          num = ry - dis;
+        } else {
+          num = ry + dis;
+        }
+        r1 = parseInt(num).toString(16);
+        if (r1.length == 1) r1 = "0" + r1;
+        let g = parseInt(gy).toString(16);
+        if (g.length == 1) g = "0" + g;
+        let b = parseInt(by).toString(16);
+        if (b.length == 1) b = "0" + b;
+        return ["#" + r + g + b, "#" + r1 + g + b];
+      }else if(ry<gy && gy>=by){//gy
+        let r = parseInt(ry).toString(16);
+        if (r.length == 1) r = "0" + r;
+        let g = parseInt(gy).toString(16);
+        if (g.length == 1) g = "0" + g;
+        let g1;
+        if (gy > dis) {
+          num = gy - dis;
+        } else {
+          num = gy + dis;
+        }
+        g1 = parseInt(num).toString(16);
+        if (g1.length == 1) g1 = "0" + g1;
+        let b = parseInt(by).toString(16);
+        if (b.length == 1) b = "0" + b;
+        return ["#" + r + g + b, "#" + r + g1 + b];
+      }else{//by
+        let r = parseInt(ry).toString(16);
+        if (r.length == 1) r = "0" + r;
+        let g = parseInt(gy).toString(16);
+        if (g.length == 1) g = "0" + g;
+        let b = parseInt(by).toString(16);
+        if (b.length == 1) b = "0" + b;
+        let b1;
+        if (by > dis) {
+          num = by - dis;
+        } else {
+          num = by + dis;
+        }
+        b1 = parseInt(num).toString(16);
+        if (b1.length == 1) b1 = "0" + b1;
+        return ["#" + r + g + b, "#" + r + g + b1];
       }
-      if (g1.length == 1) g1 = "0" + g1;
-      let b = parseInt(Math.random() * 255).toString(16);
-      if (b.length == 1) b = "0" + b;
-      return ["#" + r + g + b, "#" + r + g1 + b];
     }
     if (this.data.start) {
       let rp = randomPosition();
@@ -200,8 +238,8 @@ Page({
             rc = rc + 0.05
           break;
         }
-        if(rc>11){
-          rc=11;
+        if(rc>10){
+          rc=10;
         }
         // console.log("rc",rc);
         this.setData({rc:rc,number:num})

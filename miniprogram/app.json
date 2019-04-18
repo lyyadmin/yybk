@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/user/eyetest/eyetest",
     "pages/general/gknowledge/gknowledge",
     "pages/splash/splash",
     "pages/home/index/index",
@@ -8,7 +9,6 @@
     "pages/home/typelist/typelist",
     "pages/home/iteminfo/iteminfo",
     "pages/home/page/page",
-    "pages/user/eyetest/eyetest",
     "pages/user/tetris/tetris",
     "pages/user/login/login",
     "pages/user/visitday/visitday"
