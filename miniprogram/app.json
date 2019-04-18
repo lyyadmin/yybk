@@ -9,6 +9,7 @@
     "pages/home/iteminfo/iteminfo",
     "pages/home/page/page",
     "pages/user/eyetest/eyetest",
+    "pages/user/tetris/tetris",
     "pages/user/login/login",
     "pages/user/visitday/visitday"
   ],
@@ -52,7 +53,7 @@
     "request": 10000,
     "downloadFile": 10000
   },
-  "debug": true,
+  "debug": false,
   "navigateToMiniProgramAppIdList": [
     "wxe5f52902cf4de896"
   ]

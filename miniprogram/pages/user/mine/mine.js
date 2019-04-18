@@ -236,5 +236,11 @@ Page({
     wx.navigateTo({
       url: '../eyetest/eyetest',
     })
+  },
+
+  toTetris: function () {
+    wx.navigateTo({
+      url: '../tetris/tetris',
+    })
   }
 })

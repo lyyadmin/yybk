@@ -14,4 +14,8 @@
     <text class='line-text'>眼力测试</text>
     <image class='arraw_right' src='/images/arraw_right.png'></image>
   </view>
+  <view class='line-pane' bindtap='toTetris'>
+    <text class='line-text'>经典俄罗斯</text>
+    <image class='arraw_right' src='/images/arraw_right.png'></image>
+  </view>
 </view>
