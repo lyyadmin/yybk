@@ -5,7 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    polyline:[],
+    markers:[],
+    location:true,
+    compass:true,
+    latitude: 39.980014,
+    longitude: 116.313972
   },
 
   /**
@@ -19,7 +24,17 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    let that = this;
+    wx.getLocation({
+      type: 'gcj02', // 返回可以用于wx.openLocation的经纬度
+      success(res) {
+        // console.log(res)
+        that.setData({
+          latitude: res.latitude,
+          longitude: res.longitude
+        })
+      }
+    })
   },
 
   /**

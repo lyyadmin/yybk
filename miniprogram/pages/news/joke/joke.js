@@ -82,21 +82,22 @@ Page({
    */
   onReady: function () {
     var that = this;
-    wx.getStorage({
-      key: this.data.dataStr,
-      success: function (res) {
-        if (res.data && res.data.length > 0) {
-          that.setData({ jokes: res.data });
-        } else {
-          console.log(res);
-          that.loadData();
-        }
-      },
-      fail: function (err) {
-        console.log(err);
-        that.loadData();
-      }
-    })
+    // wx.getStorage({
+    //   key: this.data.dataStr,
+    //   success: function (res) {
+    //     if (res.data && res.data.length > 0) {
+    //       that.setData({ jokes: res.data });
+    //     } else {
+    //       console.log(res);
+    //       that.loadData();
+    //     }
+    //   },
+    //   fail: function (err) {
+    //     console.log(err);
+    //     that.loadData();
+    //   }
+    // })
+    that.loadData();
   },
 
   /**
@@ -144,7 +145,7 @@ Page({
   loadData: function () {
     var that = this;
     wx.request({
-      url: 'http://v.juhe.cn/joke/content/list.php', // 仅为示例，并非真实的接口地址
+      url: 'https://v.juhe.cn/joke/content/list.php', // 仅为示例，并非真实的接口地址
       data: {
         key:'64ccb8d8b8aee163b4a0e82ffc2b0b32',
         page:1,

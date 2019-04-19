@@ -15,7 +15,7 @@ Page({
     types: [],
     tools:[
       { title: '周公解梦', page:'../dream/dream'},
-      { title: '天气', page:'../weather/weather'}
+      { title: '我的位置', page:'../weather/weather'}
     ]
   },
 
