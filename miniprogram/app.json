@@ -1,13 +1,15 @@
 {
   "pages": [
+    "pages/home/index/index",
     "pages/news/information/information",
     "pages/general/gknowledge/gknowledge",
     "pages/splash/splash",
-    "pages/home/index/index",
     "pages/general/gknowledgeitem/gknowledgeitem",
     "pages/user/mine/mine",
     "pages/home/typelist/typelist",
     "pages/home/iteminfo/iteminfo",
+    "pages/home/dream/dream",
+    "pages/home/weather/weather",
     "pages/news/infoitem/infoitem",
     "pages/news/joke/joke",
     "pages/home/page/page",

@@ -1,0 +1,13 @@
+<!--pages/home/dream/dream.wxml-->
+<view class='dream-container'>
+  <view class='search-box'>
+    <input class='input-text' type='text' placeholder='请输入梦中的关键词' bindinput='bindKeyInput'></input>
+    <button class='search-btn' bindtap='getDreamInfo'>开始解梦</button>
+  </view>
+  <view class='dream-resault' wx:for="{{dreamInfo}}" wx:for-item="item" wx:key="unique" >
+    <view class='dream-title'>【{{item.title}}】</view>
+    <view class='dream-des'>简介：{{item.des}}</view>
+    <view class='dream-list'>详细说明：</view>
+    <view class='dream-list' wx:for="{{item.list}}" wx:for-item="listitem" wx:key="unique">{{listitem}}</view>
+  </view>
+</view>

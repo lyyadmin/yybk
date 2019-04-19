@@ -51,3 +51,20 @@
   height: 20px;
   margin-left: 5px;
 }
+.index-container .tools-box{
+  background: #FFFFFF;
+  width: auto;
+  height: auto;
+  padding: 8px;
+  margin: 0 0 15px 0;
+}
+.index-container .tools-item{
+  display: inline-block;
+  width: 25%;
+  height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 20px;
+  text-align: center;
+  padding: 8px 0;
+}

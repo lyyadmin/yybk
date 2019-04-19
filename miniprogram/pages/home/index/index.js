@@ -12,7 +12,11 @@ Page({
     duration: 1000,
     indicator_color: 'rgba(48, 191, 109, .3)',
     indicator_active_color:'rgba(48, 191, 109, .8)',
-    types: []
+    types: [],
+    tools:[
+      { title: '周公解梦', page:'../dream/dream'},
+      { title: '天气', page:'../weather/weather'}
+    ]
   },
 
   /**
@@ -184,6 +188,14 @@ Page({
     var pageid = e.currentTarget.dataset.pageid;
     wx.navigateTo({
       url: '../page/page?pageid=' + pageid
+    })
+  },
+
+  toolsPage:function(e){
+    let item = e.currentTarget.dataset.iteminfo;
+    console.log(item);
+    wx.navigateTo({
+      url: item.page + '?title=' + item.title,
     })
   }
 })
