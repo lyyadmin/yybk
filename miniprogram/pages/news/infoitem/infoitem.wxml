@@ -1,0 +1,4 @@
+<!--pages/news/infoitem/infoitem.wxml-->
+<view class='infoitem-container'>
+  <web-view class='webview' src='{{path}}'></web-view>
+</view>

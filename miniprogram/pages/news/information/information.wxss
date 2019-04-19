@@ -1,31 +1,31 @@
-/* pages/general/gknowledge/gknowledge.wxss */
-.gknowledge-container{
+/* pages/news/information/information.wxss */
+.information-container{
   width:100%;
   height: auto;
   color: #333;
   background: #FFFFFF;
 }
-.gknowledge-container .gknowledge-item{
+.information-container .information-item{
   width: auto;
   height: auto;
   margin: 0 10px;
   padding: 10px 0;
   border-bottom: solid 1px #efefef;
 }
-.gknowledge-container .item-title{
+.information-container .item-title{
   width: auto;
   margin: 0;
-  color: #30bf6d;
+  color: #333333;
   font-size: 16px;
 }
-.gknowledge-container .item-msg{
+.information-container .item-msg{
   width: auto;
-  height: 40px;
+  height: 20px;
   line-height: 20px;
   display: block;
   overflow:hidden;
   text-overflow: ellipsis;
-  margin: 5px 0;
+  margin: 5px 0 0 0;
   color: #666666;
   font-size: 14px;
 }

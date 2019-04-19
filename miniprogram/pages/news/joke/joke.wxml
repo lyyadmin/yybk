@@ -1,0 +1,7 @@
+<!--pages/news/joke/joke.wxml-->
+<view class='joke-container'>
+  <view wx:for-index="idx"  wx:for="{{jokes}}" wx:for-item="item" wx:key="unique" class='joke-item'>
+    <view class='content'>{{item.content}}</view>
+    <view class='updatetime'>时间：{{item.updatetime}}</view>
+  </view>
+</view>

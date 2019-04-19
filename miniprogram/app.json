@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/news/information/information",
     "pages/general/gknowledge/gknowledge",
     "pages/splash/splash",
     "pages/home/index/index",
@@ -7,6 +8,8 @@
     "pages/user/mine/mine",
     "pages/home/typelist/typelist",
     "pages/home/iteminfo/iteminfo",
+    "pages/news/infoitem/infoitem",
+    "pages/news/joke/joke",
     "pages/home/page/page",
     "pages/user/eyetest/eyetest",
     "pages/user/tetris/tetris",
@@ -38,6 +41,22 @@
         "selectedIconPath": "images/gknowledge_on.png",
         "pagePath": "pages/general/gknowledge/gknowledge",
         "text": "常识"
+      },
+      {
+        "color": "#333333",
+        "selectedColor": "#30bf6d",
+        "iconPath": "images/news.png",
+        "selectedIconPath": "images/news_on.png",
+        "pagePath": "pages/news/information/information",
+        "text": "动态"
+      },
+      {
+        "color": "#333333",
+        "selectedColor": "#f6d86a",
+        "iconPath": "images/xiaohua.png",
+        "selectedIconPath": "images/xiaohua_on.png",
+        "pagePath": "pages/news/joke/joke",
+        "text": "哈哈"
       },
       {
         "color": "#333333",

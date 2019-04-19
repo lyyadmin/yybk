@@ -83,7 +83,7 @@ export default class Tetris{
 
   initControl(centerX, centerY) {
     var center = parseInt(this.panelWidth / 2);
-    var radius = (height - this.panelHeight - this.cell * 3) / 5;
+    var radius = (height - this.panelHeight - this.cell * 3) / 4;
     var padding = radius * 2 / 3;
     var w = padding / 3;
     var h = parseFloat(2 * w / Math.sqrt(3));

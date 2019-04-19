@@ -1,0 +1,6 @@
+<!--pages/news/information/information.wxml--><view class='information-container'>
+  <view wx:for-index="idx"  wx:for="{{infos}}" wx:for-item="item" wx:key="unique" class='information-item' bindtap='informationItem' data-path='{{item.url}}' data-title='{{item.title}}'>
+    <view class='item-title'>{{item.title}}</view>
+    <text class='item-msg'>{{item.time}}</text>
+  </view>
+</view>
