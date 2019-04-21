@@ -1,12 +1,9 @@
-/* pages/news/information/information.wxss */
+/* pages/news/infomore/infomore.wxss */
 .information-container{
   width:100%;
-  height: 100%;
+  height: auto;
   color: #333;
   background: #FFFFFF;
-}
-.information-container .item-box{
-  margin-top: 60px;
 }
 .information-container .information-item{
   width: aoto;
@@ -58,18 +55,4 @@
 }
 .information-container .info-box{
   width:100%;
-}
-.information-container .more-box{
-  width: 100%;
-  position: fixed;
-  background: #FFFFFF;
-}
-.information-container .more-title{
-  display: inline-block;
-  width: 20%;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  text-decoration: underline;
-  color: #333333;
 }

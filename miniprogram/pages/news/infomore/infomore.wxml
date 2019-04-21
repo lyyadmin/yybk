@@ -1,0 +1,15 @@
+<!--pages/news/infomore/infomore.wxml-->
+<view class='information-container'>
+  <view wx:for-index="idx"  wx:for="{{datas}}" wx:for-item="item" wx:key="unique" class='information-item' bindtap='informationItem' data-path='{{item.url}}' data-title='{{item.title}}'>
+    <view class='item-title'>{{item.title}}</view>
+    <view class='img-box'>
+      <image class='piimg' wx:if="{{item.thumbnail_pic_s}}" src='{{item.thumbnail_pic_s}}' mode='widthFix'></image>
+      <image class='piimg imgnext' wx:if="{{item.thumbnail_pic_s02}}" src='{{item.thumbnail_pic_s02}}' mode='widthFix'></image>
+      <image class='piimg imgnext' wx:if="{{item.thumbnail_pic_s03}}" src='{{item.thumbnail_pic_s03}}' mode='widthFix'></image>
+    </view>
+    <view class='info-box'>
+      <view class='author_name'>{{item.author_name}}</view>
+      <view class='item-msg'>{{item.date}}</view>
+    </view>
+  </view>
+</view>

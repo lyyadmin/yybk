@@ -6,22 +6,19 @@ Page({
    */
   data: {
     title:'',
-    path:''
+    path:'',
+    data:'加载中...'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let title = options.title;
-    let path = options.path;
+    let path = options.path.replace('http','https');
+    console.log(path);
     if(path){
-      this.setData({title:title,path:path});
-      if(title){
-        wx.setNavigationBarTitle({
-          title: title,
-        })
-      }
+      this.setData({path:path});
+      // this.loadData(path);
     }
   },
 
@@ -72,5 +69,33 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  loadData: function (url) {
+    var that = this;
+    wx.request({
+      url: url, // 仅为示例，并非真实的接口地址
+      data: {
+        key: '110f764a17ab628193228035f56acd9a'
+      },
+      method: 'GET',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        if (res.data && res.data.length > 0) {
+          that.setData({ data: res.data });
+          wx.setStorage({
+            key: url + that.data.dataStr,
+            data: res.data,
+          })
+        } else {
+          console.log(res)
+        }
+      },
+      fail(err) {
+        console.log(err)
+      }
+    })
   }
 })

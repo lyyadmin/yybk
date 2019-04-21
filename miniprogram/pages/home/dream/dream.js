@@ -77,7 +77,7 @@ Page({
     if (value && value != '') {
       var that = this;
       wx.request({
-        url: 'http://v.juhe.cn/dream/query', // 仅为示例，并非真实的接口地址
+        url: 'https://v.juhe.cn/dream/query', // 仅为示例，并非真实的接口地址
         data: {
           key: '6f0352d4c0d27ad8447af5939b6b0d9b',
           q: value,
