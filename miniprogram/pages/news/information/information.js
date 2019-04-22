@@ -58,14 +58,30 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
     wx.getSystemInfo({
       success: (res) => {
-        this.setData({
+        that.setData({
           pixelRatio: res.pixelRatio,
           windowHeight: res.windowHeight,
           windowWidth: res.windowWidth
         })
       },
+    })
+    wx.getStorage({
+      key: 'top' + this.data.dataStr,
+      success: function(res) {
+        if (res.data && res.data.length > 0) {
+          that.setData({ top: res.data });
+        }else{
+          console.log(res);
+          that.loadData('top');
+        }
+      },
+      fail: function (err) {
+        console.log(err);
+        that.loadData('top');
+      }
     })
   },
 
@@ -73,7 +89,6 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.loadData('top');
   },
 
   /**
