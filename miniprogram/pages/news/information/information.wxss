@@ -73,3 +73,17 @@
   text-decoration: underline;
   color: #333333;
 }
+.information-container .vedio-box{
+  width: auto;
+  padding: 5px 10px;
+  padding-bottom: solid 1px #f6f6f6;
+}
+.information-container .v-title{
+  width: 100%;
+  font-size: 18px;
+  color: #333333;
+  padding: 10px 0;
+}
+.information-container .v-vedio{
+  width: 100%;
+}

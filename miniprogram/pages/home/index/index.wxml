@@ -13,17 +13,17 @@
       </swiper-item>
     </block>
   </swiper>
+  <view class='tools-box'>
+    <view class='tools-item' wx:for="{{tools}}" wx:key="unique" wx:for-item="item" bindtap='toolsPage' data-iteminfo='{{item}}'>
+    <text>{{item.title}}</text>
+    </view>
+  </view>
   <view class='type-box'>
     <view class='type-item' wx:for="{{types}}" wx:key="unique" wx:for-item="item" >
       <view class='type-card' bindtap='typelistPage' data-title='{{item.title}}' data-typename='{{item.type_name}}'>
         <image src='{{item.pic}}' class='type-img'></image>
         <text class='type-name'>{{item.title}}</text>
       </view>
-    </view>
-  </view>
-  <view class='tools-box'>
-    <view class='tools-item' wx:for="{{tools}}" wx:key="unique" wx:for-item="item" bindtap='toolsPage' data-iteminfo='{{item}}'>
-    <text>{{item.title}}</text>
     </view>
   </view>
 </view>

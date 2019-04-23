@@ -1,9 +1,9 @@
 <!--pages/news/information/information.wxml-->
 <view class='information-container'>
-  <view class='more-box'>
+  <view class='more-box' wx:if='{{show}}'>
     <text class='more-title' wx:for-index="idx"  wx:for="{{navData}}" wx:for-item="item" wx:key="unique" data-type='{{item.pinyin}}' bindtap='moreInfo'>{{item.text}}</text>
   </view>
-  <view class='item-box'>
+  <view class='item-box' wx:if='{{show}}'>
     <view wx:for-index="idx"  wx:for="{{top}}" wx:for-item="item" wx:key="unique" class='information-item' bindtap='informationItem' data-path='{{item.url}}' data-title='{{item.title}}'>
       <view class='item-title'>{{item.title}}</view>
       <view class='img-box'>
@@ -15,6 +15,18 @@
         <view class='author_name'>{{item.author_name}}</view>
         <view class='item-msg'>{{item.date}}</view>
       </view>
+    </view>
+  </view>
+  <view wx:if='{{!show}}'>
+    <view wx:for-index="idx"  wx:for="{{vedios}}" wx:for-item="item" wx:key="unique" class='vedio-box'>
+      <view class='v-title'>{{item.title}}</view>
+      <video 
+      id='vedio{{idx}}'
+      class='v-vedio' 
+      src="{{item.url}}"
+      vslide-gesture="true"
+      bindplay="playVedio"
+      ></video>
     </view>
   </view>
 </view>

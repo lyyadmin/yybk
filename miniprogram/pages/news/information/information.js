@@ -51,7 +51,10 @@ Page({
     ],
     currentTab: 0,
     navScrollLeft: 0,
-    dataStr: util.getDateString()
+    dataStr: util.getDateString(),
+    show: false,
+    vedios:[],
+    playId:undefined
   },
 
   /**
@@ -83,6 +86,8 @@ Page({
         that.loadData('top');
       }
     })
+
+    this.loadShow();
   },
 
   /**
@@ -200,5 +205,56 @@ Page({
     wx.navigateTo({
       url: '../infomore/infomore?type=' + type,
     })
+  },
+
+  loadShow:function(){
+    var self = this;
+    const db = wx.cloud.database()
+    db.collection('config').doc('XL6giVsqTi00trzy').get({
+      success: res => {
+        if (res.data) {
+          self.setData({
+            show: res.data.show_news
+          });
+          if (!res.data.show_news){
+            this.loadVedios();
+          }
+        }
+      },
+      fail: err => {
+        console.error('查询记录失败：', err)
+      }
+    })
+  },
+
+  loadVedios: function () {
+    var self = this;
+    const db = wx.cloud.database()
+    db.collection('yangshengvedio').get({
+      success: res => {
+        console.log(res);
+        if (res.data && res.data.length>0) {
+          self.setData({
+            vedios: res.data
+          });
+        }else{
+          console.log(res);
+        }
+      },
+      fail: err => {
+        console.error('查询记录失败：', err);
+      }
+    })
+  },
+  playVedio:function(e){
+    if(e.target && e.target.id){
+      let idstr = e.target.id;
+      if (this.data.playId) {
+        let ctx = wx.createVideoContext(this.data.playId, this);
+        ctx.pause();
+        ctx = undefined;
+      }
+      this.setData({ playId:idstr});
+    }
   }
 })
