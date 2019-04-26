@@ -1,5 +1,6 @@
 // pages/news/infoitem/infoitem.js
 var WxParse = require('../../../wxParse/wxParse.js');
+var base64 = require('../../../util/base64.js')
 Page({
 
   /**
@@ -15,7 +16,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let path = options.path.replace('http','https');
+    let path = options.path;
+    path = base64.decode(path).replace('http', 'https');
     console.log(path);
     if(path){
       this.setData({path:path});

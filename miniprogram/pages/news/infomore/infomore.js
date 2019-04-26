@@ -1,5 +1,6 @@
 // pages/news/infomore/infomore.js
 var util = require('../../../util/utils.js')
+var base64 = require('../../../util/base64.js');
 Page({
 
   /**
@@ -126,13 +127,107 @@ Page({
           wx.setStorage({
             key: type + that.data.dataStr,
             data: res.data.result.data,
-          })
+          });
+          that.saveData({ type: type, data: res.data.result.data});
         } else {
           console.log(res)
+          that.getDatas(type);
         }
       },
       fail(err) {
-        console.log(err)
+        console.log(err);
+        that.getDatas(type);
+      }
+    })
+  },
+
+  getDatas: function (type) {
+    var that = this;
+    const db = wx.cloud.database();
+    db.collection('news').where({ type: type }).get({
+      success: res => {
+        if (res.data && res.data.length > 0) {
+          if (type == 'top') {
+            that.setData({ top: res.data[0].data });
+          } else if (type == 'shehui') {
+            that.setData({ shehui: res.data[0].data });
+          } else if (type == 'guonei') {
+            that.setData({ guonei: res.data[0].data });
+          } else if (type == 'guoji') {
+            that.setData({ guoji: res.data[0].data });
+          } else if (type == 'yule') {
+            that.setData({ yule: res.data[0].data });
+          } else if (type == 'tiyu') {
+            that.setData({ tiyu: res.data[0].data });
+          } else if (type == 'junshi') {
+            that.setData({ junshi: res.data[0].data });
+          } else if (type == 'keji') {
+            that.setData({ keji: res.data[0].data });
+          } else if (type == 'caijing') {
+            that.setData({ caijing: res.data[0].data });
+          } else if (type == 'shishang') {
+            that.setData({ shishang: res.data[0].data });
+          } else {
+            console.log('type err !');
+          }
+          wx.setStorage({
+            key: type + that.data.dataStr,
+            data: res.data[0].data,
+          })
+          that.saveData({ type: type, data: res.data[0].data })
+        } else {
+          console.log(res);
+        }
+      },
+      fail: err => {
+        console.error('更新记录失败：', err);
+      }
+    })
+  },
+
+  saveData: function (data) {
+    var that = this;
+    const db = wx.cloud.database();
+    db.collection('news').where({ type: data.type}).get({
+      success: res => {
+        if(res.data && res.data.length>0){
+          let id = res.data[0]._id;
+          that.updataData(id,data);
+        } else {
+          that.addData(data);
+        }
+      },
+      fail: err => {
+        console.error('更新记录失败：', err);
+        that.addData(data);
+      }
+    })
+  },
+
+  updataData: function (id, data) {
+    const db = wx.cloud.database();
+    db.collection('news').doc(id).update({
+      data:{data:data.data},
+      success: res => {
+        console.log('更新记录成功！', res);
+      },
+      fail: err => {
+        console.error('更新记录失败：', err)
+      }
+    })
+  },
+
+  addData: function (data) {
+    const db = wx.cloud.database();
+    db.collection('news').add({
+      // data 字段表示需新增的 JSON 数据
+      data: data,
+      success(res) {
+        // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
+        console.log(res)
+      },
+      fail:function(err){
+        console.log(err);
       }
     })
   },
@@ -141,6 +236,7 @@ Page({
     var path = e.currentTarget.dataset.path;
     // var title = e.currentTarget.dataset.title;
     // console.log(id);
+    path = base64.encode(path);
     wx.navigateTo({
       url: '../infoitem/infoitem?path=' + path,
     })
