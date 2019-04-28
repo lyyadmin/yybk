@@ -2,23 +2,19 @@
 .joke-container{
   width: 100%;
   height: auto;
-  background: #f6f6f6;
+  background: #FFFFFF;
 }
-.joke-container .joke-item{
-  margin: 8px 8px 0 8px;
-  background: rgb(248, 253, 247);
-  padding: 8px;
-  border: solid 1px #d4f0c7;
+.joke-container .vedio-box{
+  width: auto;
+  padding: 5px 0px;
+  border-bottom: solid 5px #f6f6f6;
 }
-.joke-container .content{
-  color: #5a4603;
-  border-bottom: solid 1px #d4f0c7;
-  padding-bottom: 10px;
-  font-size: 18px;
-  font-family: '楷体';
+.joke-container .v-title{
+  width: 100%;
+  font-size: 16px;
+  color: #333333;
+  padding: 0 0 5px 0;
 }
-.joke-container .updatetime{
-  color: #666666;
-  font-size: 12px;
-  margin-top: 8px;
+.joke-container .v-vedio{
+  width: 100%;
 }

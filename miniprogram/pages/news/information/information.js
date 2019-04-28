@@ -345,7 +345,7 @@ Page({
   playVedio:function(e){
     if(e.target && e.target.id){
       let idstr = e.target.id;
-      if (this.data.playId) {
+      if (this.data.playId && this.data.playId != idstr) {
         let ctx = wx.createVideoContext(this.data.playId, this);
         ctx.pause();
         ctx = undefined;
