@@ -12,7 +12,8 @@ Page({
     photoUrl:"",
     nichen:"登录",
     openid:"",
-    genderUrl:['../../../images/sex_boy.png','../../../images/sex_girl.png']
+    genderUrl:['../../../images/sex_boy.png','../../../images/sex_girl.png'],
+    toogle:false
   },
 
   /**
@@ -143,6 +144,9 @@ Page({
           data: JSON.stringify(self.data.userInfo),
         })
         self.onQuery(res.result.openid);
+        if (res.result.openid =='ovsFZ5PsloDgZZ_EE_ZBhxqp05f8'){
+          self.setData({toogle:true});
+        }
       },
       fail: err => {
         console.error('login 失败：', err)
@@ -241,6 +245,22 @@ Page({
   toTetris: function () {
     wx.navigateTo({
       url: '../tetris/tetris',
+    })
+  },
+
+  switchChange:function(e){
+    const db = wx.cloud.database();
+    db.collection('config').doc('XL6giVsqTi00trzy').update({
+      data: { 
+        show_news: e.detail.value
+      },
+      success: res => {
+        console.log('更新记录成功！', res)
+      },
+      fail: err => {
+        icon: 'none',
+          console.error('更新记录失败：', err)
+      }
     })
   }
 })

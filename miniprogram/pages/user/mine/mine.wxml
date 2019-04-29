@@ -6,6 +6,9 @@
    <image wx:if='{{userInfo.gender==0}}' class='gender' mode="scaleToFill" src="{{genderUrl[1]}}" ></image>
    <image wx:if='{{userInfo.gender==1}}' class='gender' mode="scaleToFill" src="{{genderUrl[0]}}" ></image>
   </view>
+  <!-- <view style='padding:5px;' wx:if="{{toogle}}">
+    数据<switch checked bindchange="switchChange" />
+  </view> -->
   <view class='line-pane' bindtap='toVisitDates'>
     <text class='line-text'>访问天数</text>
     <image class='arraw_right' src='/images/arraw_right.png'></image>

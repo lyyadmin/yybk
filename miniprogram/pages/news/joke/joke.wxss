@@ -18,3 +18,59 @@
 .joke-container .v-vedio{
   width: 100%;
 }
+.joke-container .head{
+  position: absolute;
+  width: 100%;
+  height: 300rpx;
+}
+.joke-container .head-img{
+  width: 100%;
+  height: 300rpx;
+}
+.joke-container .head-txt{
+  position: absolute;
+  height: 50rpx;
+  line-height: 50rpx;
+  bottom: 0;
+  padding-left: 5rpx;
+  background: rgba(0, 0, 0, 0.3);
+  color: #FFFFFF;
+  font-size: 12px;
+}
+.joke-container .list{
+  padding: 0 5px;
+  height: 200rpx;
+  border-bottom: solid 1px #cfcfcf;
+}
+.joke-container .list-img{
+  display: inline-block;
+  width: 30%;
+  height: 170rpx;
+  margin-top: 15rpx;
+}
+.joke-container .text-box{
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  width: 69%;
+  height: 170rpx;
+  margin-left: 0.8%;
+  margin-top: 15rpx;
+}
+.joke-container .list-txt{
+  font-size: 16px;
+  padding: 0 5px;
+}
+.joke-container .source{
+  font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  padding: 0 5px;
+}
+.joke-container .daynum{
+  font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-right: 20rpx;
+}

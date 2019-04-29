@@ -13,6 +13,7 @@
     "pages/home/weather/weather",
     "pages/news/infomore/infomore",
     "pages/news/infoitem/infoitem",
+    "pages/news/jokecontent/jokecontent",
     "pages/home/page/page",
     "pages/user/eyetest/eyetest",
     "pages/user/tetris/tetris",
@@ -24,7 +25,7 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#30bf6d",
     "navigationBarTitleText": "健康百科",
-    "navigationBarTextStyle": "#fff"
+    "navigationBarTextStyle": "white"
   },
   "cloud": true,
   "tabBar": {
@@ -83,5 +84,6 @@
     "scope.userLocation": {
       "desc": "你的位置信息将用于小程序位置接口的效果展示"
     }
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

@@ -1,5 +1,6 @@
 // pages/news/joke/joke.js
 var util = require('../../../util/utils.js')
+var base64 = require('../../../util/base64.js')
 Page({
 
   /**
@@ -10,7 +11,8 @@ Page({
     dataStr: util.getDateString(),
     playId: undefined,
     currentPage:0,
-    getdata:false
+    getdata:false,
+    isVedio:false
   },
 
   /**
@@ -39,7 +41,8 @@ Page({
     //     that.loadData();
     //   }
     // })
-    that.loadVedios();
+    // that.loadVedios();
+    that.loadJokeData();
   },
 
   /**
@@ -74,9 +77,9 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    // if(this.data.getdata){
-    //   this.loadVedios();
-    // }
+    if(this.data.getdata){
+      this.loadJokeData();
+    }
   },
 
   /**
@@ -134,7 +137,7 @@ Page({
           let page = that.data.currentPage+1;
           let content = that.data.jokes.concat(res.data.V9LG4CHOR);
           that.setData({ jokes: content, currentPage:page ,getdata:true});
-          console.log(res.data.V9LG4CHOR);
+          // console.log(res.data.V9LG4CHOR);
         } else {
           console.log(res)
         }
@@ -154,5 +157,37 @@ Page({
       }
       this.setData({ playId: idstr });
     }
+  },
+  loadJokeData:function(){
+    var that = this;
+    that.setData({ getdata: false });
+    wx.request({
+      url: 'https://c.m.163.com/nc/article/list/T1350383429665/' + this.data.currentPage + '-20.html',
+      data: {},
+      method: 'GET',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        if (res && res.data && res.data.T1350383429665 && res.data.T1350383429665.length > 0) {
+          let page = that.data.currentPage + 20;
+          let content = that.data.jokes.concat(res.data.T1350383429665);
+          that.setData({ jokes: content, currentPage: page, getdata: true });
+          // console.log(res.data.T1350383429665);
+        } else {
+          console.log(res)
+        }
+      },
+      fail(err) {
+        console.log(err)
+      }
+    })
+  },
+  jokeItemContent:function(e){
+    let item = e.currentTarget.dataset.iteminfo;
+    // console.log(item.postid);
+    wx.navigateTo({
+      url: '../jokecontent/jokecontent?postid=' + item.postid,
+    })
   }
 })
