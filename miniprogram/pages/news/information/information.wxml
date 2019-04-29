@@ -17,16 +17,13 @@
       </view>
     </view>
   </view>
-  <view wx:if='{{!show}}'>
-    <view wx:for-index="idx"  wx:for="{{vedios}}" wx:for-item="item" wx:key="unique" class='vedio-box'>
-      <view class='v-title'>{{item.title}}</view>
-      <video 
-      id='vedio{{idx}}'
-      class='v-vedio' 
-      src="{{item.url}}"
-      vslide-gesture="true"
-      bindplay="playVedio"
-      ></video>
+  <view wx:for-index="idx"  wx:for="{{noeats}}" wx:for-item="item" wx:key="unique" class='vedio-box' bindtap='noeatItem' data-iteminfo='{{item}}'>
+    <view class='list'>
+      <image src='{{item.icon}}' class='list-img'></image>
+      <view class='text-box'>
+        <view class='list-txt'>{{item.title}}</view>
+        <text class='source'>{{item.des}}</text>
+      </view>
     </view>
   </view>
 </view>

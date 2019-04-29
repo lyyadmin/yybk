@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/news/joke/joke",
     "pages/news/information/information",
+    "pages/news/joke/joke",
     "pages/home/index/index",
     "pages/general/gknowledge/gknowledge",
     "pages/splash/splash",
@@ -13,6 +13,7 @@
     "pages/home/weather/weather",
     "pages/news/infomore/infomore",
     "pages/news/infoitem/infoitem",
+    "pages/news/noeatitem/noeatitem",
     "pages/news/jokecontent/jokecontent",
     "pages/home/page/page",
     "pages/user/eyetest/eyetest",

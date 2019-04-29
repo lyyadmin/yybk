@@ -1,0 +1,9 @@
+<!--pages/news/noeatitem/noeatitem.wxml-->
+<view class='page-container'>
+  <text class='title'>{{pageinfo.title}}</text>
+  <view style='padding:10px;font-size:18px;line-height:24px;color:#333333;'>{{pageinfo.des}}</view>
+  <view class='pcontent' wx:for-index="idx"  wx:for="{{pageinfo.body}}" wx:for-item="item" wx:key="unique">
+    <image class='piimg' wx:if="{{item.img}}" src='{{item.img}}' mode='widthFix'></image>
+    <text class='ptext' wx:else>{{item}}</text>
+  </view>
+</view>

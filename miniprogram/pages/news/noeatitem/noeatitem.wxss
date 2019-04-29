@@ -1,0 +1,31 @@
+/* pages/news/noeatitem/noeatitem.wxss */
+.page-container{
+  width: 100%;
+  height: auto;
+}
+.page-container .title{
+  display: inline-block;
+  margin: 15px 0 15px 20px;
+  font-size: 20px;
+  color: #30bf6d;
+}
+.page-container .pcontent{
+  margin: 0 10px;
+}
+.page-container .piimg{
+  width: 100%;
+  margin: 10px 0;
+}
+.page-container .ptext{
+  font-size: 16px;
+  word-wrap: break-word;
+  color: #333;
+  text-indent: 2em;
+  line-height: 26px;
+}
+.page-container .from{
+  display: inline-block;
+  color: #666;
+  font-size: 14px;
+  margin: 20px 0 10px 10px;
+}

@@ -55,7 +55,8 @@ Page({
     dataStr: util.getDateString(),
     show: false,
     vedios:[],
-    playId:undefined
+    playId:undefined,
+    noeats:[]
   },
 
   /**
@@ -313,7 +314,7 @@ Page({
             show: res.data.show_news
           });
           if (!res.data.show_news){
-            this.loadVedios();
+            this.loadNoEatData();
           }
         }
       },
@@ -352,5 +353,65 @@ Page({
       }
       this.setData({ playId:idstr});
     }
+  },
+
+  loadNoEatData:function(){
+    var self = this;
+    wx.getStorage({
+      key: 'noeats',
+      success: function (res) {
+        if (res.data && res.data.length > 0) {
+          self.setData({ noeats: res.data });
+          // console.log(res);
+        } else {
+          console.log('查询记录失败：', res)
+          const db = wx.cloud.database();
+          db.collection('noeat').get({
+            success: res => {
+              if (res.data && res.data.length > 0) {
+                self.setData({ noeats: res.data });
+                wx.setStorage({
+                  key: 'noeats',
+                  data: res.data,
+                });
+                // console.log(res);
+              } else {
+                console.log('查询记录失败：', res)
+              }
+            },
+            fail: err => {
+              console.error('查询记录失败：', err)
+            }
+          })
+        }
+      },
+      fail: function (err) {
+        const db = wx.cloud.database();
+        db.collection('noeat').get({
+          success: res => {
+            if (res.data && res.data.length > 0) {
+              self.setData({ noeats: res.data });
+              wx.setStorage({
+                key: 'noeats',
+                data: res.data,
+              });
+              // console.log(res);
+            } else {
+              console.log('查询记录失败：', res)
+            }
+          },
+          fail: err => {
+            console.error('查询记录失败：', err)
+          }
+        })
+      }
+    })
+  },
+
+  noeatItem:function(e){
+    let item = e.currentTarget.dataset.iteminfo;
+    wx.navigateTo({
+      url: '../noeatitem/noeatitem?pageid=' + item._id,
+    })
   }
 })
