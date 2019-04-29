@@ -6,7 +6,7 @@
       <view class='v-title'>{{item.title}}</view>
     </view>
   </view>
-  <view wx:else>
+  <view>
     <view wx:for-index="idx"  wx:for="{{jokes}}" wx:for-item="item" wx:key="unique" class='news-box' bindtap='jokeItemContent' data-iteminfo='{{item}}'>
       <view wx:if="{{item.hasHead}}" style='height:150px;'>
         <view class='head'>
