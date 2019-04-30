@@ -17,7 +17,6 @@
     "pages/news/jokecontent/jokecontent",
     "pages/home/page/page",
     "pages/user/eyetest/eyetest",
-    "pages/user/tetris/tetris",
     "pages/user/login/login",
     "pages/user/visitday/visitday"
   ],

@@ -1,7 +1,0 @@
-<!--pages/user/tetris/tetris.wxml-->
-<view class="page-body">
-  <view class="page-body-wrapper">
-    <canvas canvas-id="canvas" class="canvas" bindtap='canvasClick'></canvas>
-  </view>
-</view>
-

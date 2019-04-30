@@ -13,8 +13,7 @@ Page({
     nichen:"登录",
     openid:"",
     genderUrl:['../../../images/sex_boy.png','../../../images/sex_girl.png'],
-    toogle:false,
-    jdels:false
+    toogle:false
   },
 
   /**
