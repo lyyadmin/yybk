@@ -1,12 +1,12 @@
 <!--pages/news/joke/joke.wxml-->
 <view class='joke-container'>
-  <view wx:if="{{isVedio==true}}">
-    <view wx:for-index="idx"  wx:for="{{jokes}}" wx:for-item="item" wx:key="unique" class='vedio-box'>
-      <video id='joke{{idx}}' class='v-vedio' src="{{item.mp4_url}}" vslide-gesture="true" poster="{{item.cover}}" title="{{item.title}}" bindplay="playJokeVedio" cache='{{false}}' ></video>
-      <view class='v-title'>{{item.title}}</view>
+  <view wx:if="{{show_joke==false}}">
+    <view wx:for-index="idx"  wx:for="{{jokes}}" wx:for-item="item" wx:key="unique" class='joke-item'> 
+      <view class='content'>{{item.content}}</view> 
+      <view class='updatetime'>时间：{{item.updatetime}}</view>
     </view>
   </view>
-  <view>
+  <view wx:else>
     <view wx:for-index="idx"  wx:for="{{jokes}}" wx:for-item="item" wx:key="unique" class='news-box' bindtap='jokeItemContent' data-iteminfo='{{item}}'>
       <view wx:if="{{item.hasHead}}" style='height:150px;'>
         <view class='head'>

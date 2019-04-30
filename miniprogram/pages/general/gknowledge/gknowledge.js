@@ -29,12 +29,12 @@ Page({
           });
         } else {
           console.log(res);
-          this.loadData();
+          self.loadData();
         }
       },
       fail:function(err){
         console.log(err);
-        this.loadData();
+        self.loadData();
       }
     });
   },

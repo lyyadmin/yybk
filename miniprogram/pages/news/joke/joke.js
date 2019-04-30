@@ -12,7 +12,8 @@ Page({
     playId: undefined,
     currentPage:0,
     getdata:false,
-    isVedio:false
+    isVedio:false,
+    show_joke:false
   },
 
   /**
@@ -26,23 +27,22 @@ Page({
    */
   onReady: function () {
     var that = this;
-    // wx.getStorage({
-    //   key: this.data.dataStr,
-    //   success: function (res) {
-    //     if (res.data && res.data.length > 0) {
-    //       that.setData({ jokes: res.data });
-    //     } else {
-    //       console.log(res);
-    //       that.loadData();
-    //     }
-    //   },
-    //   fail: function (err) {
-    //     console.log(err);
-    //     that.loadData();
-    //   }
-    // })
+    wx.getStorage({
+      key: this.data.dataStr,
+      success: function (res) {
+        if (res.data && res.data.length > 0) {
+          that.setData({ jokes: res.data });
+        } else {
+          console.log(res);
+          that.loadData();
+        }
+      },
+      fail: function (err) {
+        console.log(err);
+        that.loadData();
+      }
+    })
     // that.loadVedios();
-    that.loadJokeData();
   },
 
   /**
@@ -77,7 +77,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    if(this.data.getdata){
+    if (this.data.getdata && show_joke){
       this.loadJokeData();
     }
   },
@@ -188,6 +188,26 @@ Page({
     // console.log(item.postid);
     wx.navigateTo({
       url: '../jokecontent/jokecontent?postid=' + item.postid,
+    })
+  },
+
+  loadShow: function () {
+    var self = this;
+    const db = wx.cloud.database()
+    db.collection('config').doc('XL6giVsqTi00trzy').get({
+      success: res => {
+        if (res.data) {
+          self.setData({
+            show_joke: res.data.joke
+          });
+          if (res.data.joke) {
+            that.loadJokeData();
+          }
+        }
+      },
+      fail: err => {
+        console.error('查询记录失败：', err)
+      }
     })
   }
 })

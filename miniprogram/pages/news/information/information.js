@@ -362,6 +362,9 @@ Page({
       success: function (res) {
         if (res.data && res.data.length > 0) {
           self.setData({ noeats: res.data });
+          wx.setNavigationBarTitle({
+            title: '饮食禁忌',
+          });
           // console.log(res);
         } else {
           console.log('查询记录失败：', res)
@@ -375,6 +378,10 @@ Page({
                   data: res.data,
                 });
                 // console.log(res);
+
+                wx.setNavigationBarTitle({
+                  title: '饮食禁忌',
+                });
               } else {
                 console.log('查询记录失败：', res)
               }
@@ -396,6 +403,9 @@ Page({
                 data: res.data,
               });
               // console.log(res);
+              wx.setNavigationBarTitle({
+                title: '饮食禁忌',
+              });
             } else {
               console.log('查询记录失败：', res)
             }
