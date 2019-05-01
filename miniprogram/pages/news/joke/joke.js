@@ -20,12 +20,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.loadShow();
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    // that.loadVedios();
+  },
+
+  loadSelfJoke: function () {
     var that = this;
     wx.getStorage({
       key: this.data.dataStr,
@@ -42,7 +47,6 @@ Page({
         that.loadData();
       }
     })
-    // that.loadVedios();
   },
 
   /**
@@ -77,7 +81,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    if (this.data.getdata && show_joke){
+    if (this.data.getdata && this.data.show_joke){
       this.loadJokeData();
     }
   },
@@ -171,8 +175,12 @@ Page({
       success(res) {
         if (res && res.data && res.data.T1350383429665 && res.data.T1350383429665.length > 0) {
           let page = that.data.currentPage + 20;
-          let content = that.data.jokes.concat(res.data.T1350383429665);
-          that.setData({ jokes: content, currentPage: page, getdata: true });
+          if (that.data.currentPage == 0) {
+            that.setData({ jokes: res.data.T1350383429665, currentPage: page, getdata: true });
+          } else {
+            let content = that.data.jokes.concat(res.data.T1350383429665);
+            that.setData({ jokes: content, currentPage: page, getdata: true });
+          }
           // console.log(res.data.T1350383429665);
         } else {
           console.log(res)
@@ -201,7 +209,9 @@ Page({
             show_joke: res.data.joke
           });
           if (res.data.joke) {
-            that.loadJokeData();
+            self.loadJokeData();
+          }else{
+            self.loadSelfJoke();
           }
         }
       },
