@@ -1,0 +1,12 @@
+<!--pages/home/noeat/noeat.wxml-->
+<view class='noeat-container'>
+  <view wx:for-index="idx"  wx:for="{{noeats}}" wx:for-item="item" wx:key="unique" class='vedio-box' bindtap='noeatItem' data-iteminfo='{{item}}'>
+    <view class='list'>
+      <image src='{{item.icon}}' class='list-img'></image>
+      <view class='text-box'>
+        <view class='list-txt'>{{item.title}}</view>
+        <text class='source'>{{item.des}}</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,49 @@
+/* pages/home/noeat/noeat.wxss */
+.noeat-container{
+  width:100%;
+  height: auto;
+  color: #333;
+  background: #FFFFFF;
+}
+
+.noeat-container .vedio-box{
+  width: auto;
+  padding: 5px 5px;
+  padding-bottom: solid 1px #f6f6f6;
+}
+.noeat-container .v-vedio{
+  width: 100%;
+}
+.noeat-container .list{
+  padding: 5px;
+  border-bottom: solid 1px #cfcfcf;
+}
+.noeat-container .list-img{
+  display: inline-block;
+  width: 30%;
+  height: 170rpx;
+}
+.noeat-container .text-box{
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  width: 69%;
+  height: 170rpx;
+  margin-left: 0.8%;
+}
+.noeat-container .list-txt{
+  font-size: 18px;
+  padding: 0 15rpx;
+  color: #000000;
+}
+.noeat-container .source{
+  font-size: 16px;
+  position: absolute;
+  bottom: 10px;
+  padding: 0 15rpx;
+  height: 40px;
+  line-height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #666666;
+}

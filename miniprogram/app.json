@@ -11,6 +11,7 @@
     "pages/home/iteminfo/iteminfo",
     "pages/home/dream/dream",
     "pages/home/weather/weather",
+    "pages/home/noeat/noeat",
     "pages/news/infomore/infomore",
     "pages/news/infoitem/infoitem",
     "pages/news/noeatitem/noeatitem",
