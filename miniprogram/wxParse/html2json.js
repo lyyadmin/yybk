@@ -207,7 +207,7 @@ function html2json(html, bindName) {
             var node = bufArray.shift();
             if (node.tag !== tag) console.error('invalid state: mismatch end tag');
 
-            if (tag == 'title') {
+          if (tag == 'title' || tag == 'script') {
               // console.log('title' + node.nodes[0].text);
               if (node && node.nodes && node.nodes.length > 0) {
                 let title = node.nodes[0].text;

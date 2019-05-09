@@ -1,0 +1,40 @@
+/* pages/home/yunshi/yunshi.wxss */
+.page-section-gap{
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+.sx_box {
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-color: #2d1e22;
+  background-size: 100%;
+  padding-bottom: 0.26rem;
+}
+.sx_title {
+  display: block;
+  overflow: hidden;
+}
+.sx_title image{
+  width: 100%;
+  margin: 4% auto 4%;
+  height: 60px;
+}
+.sx_items {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap:wrap;
+  -webkit-box-lines:multiple;
+  -moz-flex-wrap:wrap;
+  flex-wrap:wrap;
+}
+.sx_items .atab {
+  display: block;
+  width: 50%;
+}
+.sx_items .atab image{
+  width: 99%;
+  height: 120px;
+  margin-left: 1%;
+}

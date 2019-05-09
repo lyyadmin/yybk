@@ -1,0 +1,275 @@
+/* pages/home/yunshiitem/yunshiitem.wxss */
+@import "../../../wxParse/wxParse.wxss";
+.wxParse{
+  background: #2d1e23;
+  padding:0;
+}
+.sx_items {
+  display: none;
+}
+.sx_h1{
+  display: none;
+}
+.sx_details {
+    padding: 0 0.26rem;
+    background-color: #2d1e23;
+}
+
+.sx_details .sx_title {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/sx_title.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-bottom: 1px;
+}
+
+.sx_details .sx_title::after {
+    display: block;
+    content: "";
+    padding-bottom: 4%;
+}
+
+.sx_details .sx_body {
+    font-size: 0.34rem;
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/sx_body.png');
+    background-size: 100%;
+    padding: 0 6%;
+}
+
+.sx_details .cnt_tips {
+    display: block;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: bottom;
+    height: 1.1rem;
+    line-height: 500px;
+    overflow: hidden;
+    margin-bottom: 0.1rem;
+}
+
+.sx_details .cnt_tips.zt {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/zhengtiys.png');
+}
+
+.sx_details .cnt_tips.cy {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/caiyunys.png');
+}
+
+.sx_details .cnt_tips.sy {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/shiyeys.png');
+}
+
+.sx_details .cnt_tips.gq {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/ganqingys.png');
+}
+
+.sx_details .cnt_tips.jk {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/jiankangys.png');
+}
+
+.sx_details .cnt_tips.jxw {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/jixiangwu.png');
+}
+
+.sx_details .cnt_tips.ysshu {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/shurenys.png');
+}
+
+.sx_details .cnt_tips.ysniu {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/niurenys.png');
+}
+
+.sx_details .cnt_tips.yshu {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/hurenys.png');
+}
+
+.sx_details .cnt_tips.ystu {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/turenys.png');
+}
+
+.sx_details .cnt_tips.yslong {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/longrenys.png');
+}
+
+.sx_details .cnt_tips.ysshe {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/sherenys.png');
+}
+
+.sx_details .cnt_tips.ysma {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/marenys.png');
+}
+
+.sx_details .cnt_tips.ysyang {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/yangrenys.png');
+}
+
+.sx_details .cnt_tips.yshou {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/hourenys.png');
+}
+
+.sx_details .cnt_tips.ysji {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/jirenys.png');
+}
+
+.sx_details .cnt_tips.ysgou {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/gourenys.png');
+}
+
+.sx_details .cnt_tips.yszhu {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/zhurenys.png');
+}
+
+.sx_details .cnt_tips.yl {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/liuyueys.png');
+}
+.sx_details .cnt_title {
+    color: #782336;
+}
+
+.sx_details view {
+    line-height: 1.4rem;
+    text-align: justify;
+    padding: 0.12rem 0;
+}
+
+.sx_details .cnt_little {
+    display: inline-block;
+    color: #f7f5de;
+    border-radius: 0.1rem;
+    background-color: #9d2c48;
+    padding: 0.12rem 0.1rem;
+    margin: 0.16rem 0;
+    font-size: 16px;
+}
+.sx_details .cnt_tips {
+    display: block;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: bottom;
+    height: 30px;
+    line-height: 500px;
+    overflow: hidden;
+    margin-bottom: 0.1rem;
+}
+.sx_details .sx_body {
+    font-size: 0.34rem;
+    background-image: url(https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/sx_body.png);
+    background-size: 100%;
+    padding: 5px 6%;
+}
+
+.sx_details .cnt_time {
+    display: block;
+    line-height: 0.6rem;
+    color: #a42c47;
+    font-size: 16px;
+}
+.sx_details .sx_foot {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/sx_foot.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-bottom: 1px;
+}
+
+.sx_details .sx_foot::after {
+    display: block;
+    content: "";
+    padding-bottom: 10%;
+}
+
+.sx_box {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/sx_head.png');
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-color: #412e34;
+    background-size: 100%;
+    padding-bottom: 0.1rem;
+}
+
+.sx_nav {
+    overflow: hidden;
+}
+
+.sx_shenxiao {
+    width: 100%;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 7.6% auto 0;
+}
+
+.sx_shenxiao::after {
+    display: block;
+    content: "";
+    padding-bottom: 48%;
+}
+
+.sx_shenxiao.shu {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/shu.png');
+    background-color: #f8e096;
+}
+
+.sx_shenxiao.niu {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/niu.png');
+    background-color: #f0a449;
+}
+
+.sx_shenxiao.hu {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/hu.png');
+    background-color: #91c0ac;
+
+}
+
+.sx_shenxiao.tu {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/tu.png');
+    background-color: #c876a3;
+
+}
+
+.sx_shenxiao.long {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/long.png');
+    background-color: #f9c697;
+
+}
+
+.sx_shenxiao.she {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/she.png');
+    background-color: #c5e3d1;
+
+}
+
+.sx_shenxiao.ma {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/ma.png');
+    background-color: #ebeace;
+
+}
+
+.sx_shenxiao.yang {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/yang.png');
+    background-color: #eedcce;
+
+}
+
+.sx_shenxiao.hou {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/hou.png');
+    background-color: #ccbb76;
+
+}
+
+.sx_shenxiao.ji {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/ji.png');
+    background-color: #f0af28;
+
+}
+
+.sx_shenxiao.gou {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/gou.png');
+    background-color: #e24735;
+
+}
+
+.sx_shenxiao.zhu {
+    background-image: url('https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/image/zhu.png');
+    background-color: #915263;
+
+}
+

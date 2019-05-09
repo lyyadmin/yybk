@@ -26,13 +26,9 @@
       </view>
     </view>
   </view>
-  <view wx:for-index="idx"  wx:for="{{noeats}}" wx:for-item="item" wx:key="unique" class='vedio-box' bindtap='noeatItem' data-iteminfo='{{item}}'>
-    <view class='list'>
-      <image src='{{item.icon}}' class='list-img'></image>
-      <view class='text-box'>
-        <view class='list-txt'>{{item.title}}</view>
-        <text class='source'>{{item.des}}</text>
-      </view>
-    </view>
+  <image bindtap='toYunShi' style='width:100%;height:60px;background:#FFFFFF;border-top:solid 1px #ddd;' src='https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/img/sx_title.png'></image>
+  <view class='noeat-item' bindtap='noeatPage'>
+    <image src='https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/images/others/ysjj.jpg'></image>
+    <view class='noeat-text'>为了健康，你还是要克制自己哦!</view>
   </view>
 </view>

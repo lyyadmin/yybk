@@ -1,0 +1,14 @@
+<!--pages/home/yunshi/yunshi.wxml-->
+<view class="page-body">
+  <view class="sx_box">
+    <view class="sx_title">
+      <image src="{{baseurl}}sx_title.png" alt="2019年生肖运势详解"></image>
+    </view>
+    <view class="sx_items">
+      <view bindtap='yunshiItem' wx:for-index="idx"  wx:for="{{imgs}}" wx:for-item="item" wx:key="unique" class='atab' data-yunshi='{{item}}'>
+        <image src="{{baseurl+item}}.png" mode='aspectFill'></image>
+      </view>
+    </view>
+  </view>
+</view>
+

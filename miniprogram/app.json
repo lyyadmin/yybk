@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/home/index/index",
     "pages/news/information/information",
     "pages/news/joke/joke",
-    "pages/home/index/index",
     "pages/general/gknowledge/gknowledge",
     "pages/splash/splash",
     "pages/general/gknowledgeitem/gknowledgeitem",
@@ -12,6 +12,8 @@
     "pages/home/dream/dream",
     "pages/home/weather/weather",
     "pages/home/noeat/noeat",
+    "pages/home/yunshi/yunshi",
+    "pages/home/yunshiitem/yunshiitem",
     "pages/news/infomore/infomore",
     "pages/news/infoitem/infoitem",
     "pages/news/noeatitem/noeatitem",

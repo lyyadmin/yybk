@@ -1,4 +1,4 @@
-// pages/news/infoitem/infoitem.js
+// pages/home/yunshiitem/yunshiitem.js
 var WxParse = require('../../../wxParse/wxParse.js');
 Page({
 
@@ -6,20 +6,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    title:'',
-    path:'',
-    data:'加载中...'
+    base:'https://6c79-lyy-8910599-1258475508.tcb.qcloud.la/wap/yunshi/2019/',
+    title: '',
+    path: '',
+    data: '加载中...'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let path = options.path;
-    path = base64.decode(path).replace('http', 'https');
+    let type = options.type;
+    let path = this.data.base + type + '.html';
     console.log(path);
-    if(path){
-      this.setData({path:path});
+    if (path) {
+      this.setData({ path: path });
       this.loadData(path);
     }
 

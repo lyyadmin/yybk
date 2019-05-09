@@ -71,7 +71,7 @@
   line-height: 30px;
   text-align: center;
   text-decoration: underline;
-  color: #333333;
+  color: #479706;
 }
 .information-container .vedio-box{
   width: auto;
