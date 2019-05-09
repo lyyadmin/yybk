@@ -108,9 +108,6 @@ Page({
     var that = this;
     wx.request({
       url: url, // 仅为示例，并非真实的接口地址
-      data: {
-        key: '110f764a17ab628193228035f56acd9a'
-      },
       method: 'GET',
       header: {
         'content-type': 'application/json' // 默认值
@@ -123,6 +120,9 @@ Page({
             key: url + that.data.dataStr,
             data: res.data,
           })
+          wx.setNavigationBarTitle({
+            title: '运势',
+          });
         } else {
           console.log(res)
         }
