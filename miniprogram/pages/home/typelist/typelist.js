@@ -6,7 +6,9 @@ Page({
    */
   data: {
     list:[],
-    typename:""
+    typename:"",
+    loading:false,
+    hasdata:true
   },
 
   /**
@@ -82,7 +84,9 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    if(!this.data.loading && this.data.hasdata){
+      this.onTypelist(this.data.typename);
+    }
   },
 
   /**
@@ -104,6 +108,7 @@ Page({
    */
   onTypelist: function (type_name) {
     var self = this;
+    self.setData({loading:true});
     const db = wx.cloud.database()
     db.collection('typelist').field({
       _id:true,
@@ -119,7 +124,8 @@ Page({
       success: res => {
         wx.stopPullDownRefresh();
         wx.hideNavigationBarLoading();
-        console.log(res.data);
+        // console.log(res.data);
+        self.setData({ loading: true });
         if (res.data && res.data.length != 0) {
           wx.setStorage({
             key: 'typelist' + type_name,
@@ -128,13 +134,63 @@ Page({
           self.setData({
             list: res.data
           });
+          if (res.data.length < 20) {
+            self.setData({ hasdata: false });
+          }
+        }else{
+          self.setData({ hasdata:false});
         }
       },
       fail: err => {
+        self.setData({ loading: true });
         wx.stopPullDownRefresh();
         wx.hideNavigationBarLoading();
         console.error('查询记录失败：', err)
       }
     })
+  },
+
+  /**
+   * 查询menu
+   */
+  onTypelist: function (type_name) {
+    var self = this;
+    const db = wx.cloud.database()
+    db.collection('typelist').field({
+      _id: true,
+      pic: true,
+      title: true,
+      pinyin: true,
+      subtitle: true,
+      type_name: true
+    }).where({
+      menu: 1,
+      type_name: type_name
+    })
+    .skip(this.data.list.length)
+    .get({
+        success: res => {
+          wx.stopPullDownRefresh();
+          wx.hideNavigationBarLoading();
+          self.setData({ loading: true });
+          if (res.data && res.data.length != 0) {
+            let datalist = this.data.list.concat(res.data);
+            self.setData({
+              list: datalist
+            });
+            if (res.data.length < 20) {
+              self.setData({ hasdata: false });
+            }
+          } else {
+            self.setData({ hasdata: false });
+          }
+        },
+      fail: err => {
+        self.setData({ loading: true });
+          wx.stopPullDownRefresh();
+          wx.hideNavigationBarLoading();
+          console.error('查询记录失败：', err)
+        }
+      })
   }
 })
