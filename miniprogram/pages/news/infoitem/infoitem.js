@@ -1,5 +1,6 @@
 // pages/news/infoitem/infoitem.js
 var WxParse = require('../../../wxParse/wxParse.js');
+var base64 = require('../../../util/base64.js')
 Page({
 
   /**
